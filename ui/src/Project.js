@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Button from '@material-ui/core/Button';
+import Button from '@mui/material/Button';
 import TextField from 'material-ui/TextField';
 import {useState} from 'react';
 
@@ -68,11 +68,12 @@ class Project extends React.Component {
              <TextField label="Enter qty" variant="outlined" />
             </div>
            </div>
+           
            <div class = "HWSet">
             <div class = "Buttons">
-              <Button variant="text" onClick={() => { alert(" hardware checked in"); }} >
+            <Button variant="text" onClick={() => { alert(" hardware checked in"); }} color = "primary">
                 Check In
-              </Button>
+            </Button>
             </div>
             <div class = "Buttons">
             <Button variant="text" onClick={() => { alert(" hardware checked in"); }} >
@@ -92,14 +93,13 @@ class Project extends React.Component {
               </Button>
               </div>
            </div>
-                       {/*
            <div class = "Join">
             <div class = "Buttons">
               <Button variant="text" onClick={() => { alert("Joined "); }} >
                 Join
               </Button>
-              </div>
-           </div> */}
+            </div> 
+           </div>
         </div>
         </body>
       )
