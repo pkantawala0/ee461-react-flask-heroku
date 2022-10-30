@@ -144,6 +144,9 @@ class Project extends React.Component {
               <Button variant="text" onClick={() => { alert("Joined " + this.state.projectNum); }} >
                 Join
               </Button> 
+              <Button variant="text" onClick={() => { alert("Left " + this.state.projectNum); }} >
+                Leave
+              </Button> 
             </div>   
            </div> 
         </div>
