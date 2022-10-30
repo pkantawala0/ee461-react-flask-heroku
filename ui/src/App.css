@@ -1,3 +1,99 @@
-.hostName {
-  font-family: "Comic Sans MS";
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+
+
+.container{
+	height: 150px;
+	display: grid;
+	grid-template-columns: 150px 200px 150px 200px 200px 200px 50px;
+	grid-column-gap: 2px;
+  background: lightgray;
+  border: 2px solid black;
+  margin: 12px;
+  padding: 24px;
+}
+
+input[type=text] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+
+}
+
+
+.container2{
+	height: 150px;
+	display: grid;
+	grid-template-columns: 150px 200px 150px 200px 200px 200px 50px;
+	grid-column-gap: 2px;
+  background: lightgreen;
+  border: 2px solid black;
+  margin: 12px;
+  padding: 24px;
+}
+
+.HWSet{
+  display: grid;
+  grid-template-rows: 50px 50px
+}
+
+.Set
+{
+  font-family: Arial;
+  color: black;
+  font-size: 15px;
+}
+
+.authusers
+{
+  color:gray;
+  font-family: Arial;
+  font-size: 15px;
+}
+
+.Project {
+  font-family: Arial;
+  color: black;
+  font-size: 20px;
+  height: 10vh;
+
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.Buttons
+{
+  font-family: Arial;
+  color: black;
+  font-size: 20px;
+}
+
+.TextFields
+{
+  font-family: Arial;
+  color: black;
+  font-size: 10px;
+  height: 10px;
+
 }

@@ -1,11 +1,22 @@
 import './App.css';
+import React, { Component } from 'react';
+import Button from '@material-ui/core/Button';
+import TextField from 'material-ui/TextField';
+import Project from './Project.js';
+import {useState} from 'react';
 
-function App() {
+
+function App (){
+
   return (
-    <div>
-      This useless app is currently running on <span className="hostName">{window.location.href.split('/')[2]}</span>. Neat!
-    </div>
+    <body>
+        <Project num = "1"/>
+        <Project num = "2"/>
+        <Project num = "3"/>
+    
+    </body>
   );
 }
+
 
 export default App;
