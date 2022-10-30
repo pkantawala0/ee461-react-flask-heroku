@@ -71,7 +71,7 @@ class Project extends React.Component {
            
            <div class = "HWSet">
             <div class = "Buttons">
-            <Button variant="text" onClick={() => { alert(" hardware checked in"); }} color = "primary">
+            <Button variant="text" onClick={() => { alert(" hardware checked in"); }}>
                 Check In
             </Button>
             </div>
@@ -84,12 +84,12 @@ class Project extends React.Component {
            <div class = "HWSet">
            <div class = "Buttons">
            <Button variant="text" onClick={() => { alert(" hardware checked out"); }} >
-                Check In
+                Check Out
               </Button>           
             </div>
             <div class = "Buttons">
             <Button variant="text" onClick={() => { alert(" hardware checked out"); }} >
-                Check In
+                Check Out
               </Button>
               </div>
            </div>
