@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import Button from '@mui/material/Button';
-import TextField from 'material-ui/TextField';
+import TextField from '@mui/material/TextField';
 import {useState} from 'react';
+// import qty from 'ui\templates\settings.html';
+// import projectID from 'ui\templates\settings.html';
 
-// var qty = document.getElementById("my-data").getAttribute("qty")
 // function retQty(qty) {
 //   return qty
 // } 
@@ -18,32 +19,66 @@ class Project extends React.Component {
       super(props);
       this.state=
       {
-        projectNum: props.num
+        projectNum: props.num,
+        HWSet1: props.hw1,
+        HWSet2: props.hw2
       };
 
+    //   this.updateState = this.updateState.bind(this)
+
       this.handleChange = this.handleChange.bind(this);
-      this.handleSubmit = this.handleSubmit.bind(this);
+      this.chkInHW1 = this.chkInHW1.bind(this);
+      this.chkInHW2 = this.chkInHW2.bind(this);
+
+      this.chkOutHW1 = this.chkOutHW1.bind(this);
+      this.chkOutHW2 = this.chkOutHW2.bind(this);
+    //   this.handleSubmit = this.handleSubmit.bind(this);
+    }
+    
+
+    chkInHW1()
+    {   
+         this.setState(prevState => {
+            return {HWSet1: (parseInt(prevState.HWSet1) + 1) + ""}
+         });
+    }
+
+    chkInHW2()
+    {   
+        this.setState(prevState => {
+            return {HWSet2: (parseInt(prevState.HWSet2) + 1) + ""}
+         });
+    }
+
+    chkOutHW1()
+    {   
+         this.setState(prevState => {
+            return {HWSet1: (parseInt(prevState.HWSet1) - 1) + ""}
+         });
+    }
+
+    chkOutHW2()
+    {   
+        this.setState(prevState => {
+            return {HWSet2: (parseInt(prevState.HWSet2) - 1) + ""}
+         });
     }
 
     handleChange(event) {
       this.setState({value: event.target.value});
     }
-  
-    handleSubmit(event) {
-      alert('hardware checked in ' + this.state.projectID);
-      event.preventDefault();
-    }
 
     render() {
       return (
         <body>
+          
           <div class = "container">
            <div class = "Project">
               <p>
                   Project Name {this.state.projectNum}
               </p>
            </div>
-           <div class = "authusers">
+            <div class = "authusers">
               <p>
                 user1, user2, user3
               </p>
@@ -51,12 +86,12 @@ class Project extends React.Component {
            <div class = "HWSet">
               <div class = "Set">
                 <p>
-                  HWSet1: 50/100
+                  HWSet1: {this.state.HWSet1}
                 </p>
               </div>
               <div class = "Set">   
                 <p>
-                  HWSet2: 0/100
+                  HWSet2: {this.state.HWSet2}
                 </p>
               </div>
            </div>
@@ -68,27 +103,38 @@ class Project extends React.Component {
              <TextField label="Enter qty" variant="outlined" />
             </div>
            </div>
-           
            <div class = "HWSet">
             <div class = "Buttons">
-            <Button variant="text" onClick={() => { alert(" hardware checked in"); }}>
+            <Button variant="text" onClick={() => {
+                alert(" hardware checked in");
+                this.chkInHW1();
+                }}>
                 Check In
             </Button>
             </div>
             <div class = "Buttons">
-            <Button variant="text" onClick={() => { alert(" hardware checked in"); }} >
+            <Button variant="text" onClick={() => {
+                    alert(" hardware checked in"); 
+                    this.chkInHW2();
+                }} >
                 Check In
               </Button>
             </div>
            </div>
            <div class = "HWSet">
            <div class = "Buttons">
-           <Button variant="text" onClick={() => { alert(" hardware checked out"); }} >
+           <Button variant="text" onClick={() => {
+                alert(" hardware checked out");
+                this.chkOutHW1();
+            }} >
                 Check Out
               </Button>           
             </div>
             <div class = "Buttons">
-            <Button variant="text" onClick={() => { alert(" hardware checked out"); }} >
+            <Button variant="text" onClick={() => {
+                alert(" hardware checked out");
+                this.chkOutHW2();
+            }} >
                 Check Out
               </Button>
               </div>
@@ -97,9 +143,9 @@ class Project extends React.Component {
             <div class = "Buttons">
               <Button variant="text" onClick={() => { alert("Joined "); }} >
                 Join
-              </Button>
-            </div> 
-           </div>
+              </Button> 
+            </div>   
+           </div> 
         </div>
         </body>
       )
